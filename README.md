@@ -24,7 +24,7 @@ We then used Pandas to create a dataframe from the results_june list. The "descr
 
 ### - December Data
 <p padding-left: 50px>We followed a similar pattern in December, writing the following query, only changing the month value to 12 instead of 6 to represent December: </p><br>
-```results_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()```
+`results_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()`
 <p>The "describe" function gave us this table:</p>
 <p align ="center">
 <img src="Results/Dec_temps.png" alt="December Temps" width="150"/><br>
@@ -38,7 +38,7 @@ We then used Pandas to create a dataframe from the results_june list. The "descr
 ## Summary
 <p>This study has shown that the island of Oahu will be a great place to open an ice cream shop. Temperatures are warm and comfortable, and rarely dip to levels of discomfort. Even the December low of 56 degrees is a fairly comfortable temperature relative to many parts of the world. </p>
 <p>To determine the suitability of the location for a surf shop, we will need to delve further into the climate data to ascertain the precipitation amounts for the months of June and December. Two additional queries would garner this information. First, we would query the database for the precipitation measurements, filtering for the month of June:</p>
-```precip_june = session.query(Measurement.prcp).filter(extract('month', Measurement.date)==6).all()```
+`precip_june = session.query(Measurement.prcp).filter(extract('month', Measurement.date)==6).all()`
 
 Next we would perform the same query for December:
 ```precip_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()```
