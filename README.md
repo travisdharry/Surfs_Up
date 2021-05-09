@@ -11,8 +11,9 @@ We were asked to help decide if a Hawaiian surf shop that sells ice cream would 
 ## Results
 In order to determine the suitability of Oahu as a surf shop location we focused on data from the months of June and December. <br>
 ### - June Data
-<p padding-left: 50px>We began our code by importing SQLAlchemy, then created a SQLite engine and reflected our tables into the new model. We created a session to link our Python code to the database then queried it. To filter the data for the month of June we used the SQLAlchemy "extract" function to find the month each measurement was taken. The code for the resultant `query was`:</p>
-`results_june = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==6).all()`
+<p padding-left: 50px>We began our code by importing SQLAlchemy, then created a SQLite engine and reflected our tables into the new model. We created a session to link our Python code to the database then queried it. To filter the data for the month of June we used the SQLAlchemy "extract" function to find the month each measurement was taken. The code for the resultant query was:</p>
+
+results_june = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==6).all()
 
 We then used Pandas to create a dataframe from the results_june list. The "describe" function returned the following statistics: <br>
 <p align ="center">
@@ -23,10 +24,7 @@ We then used Pandas to create a dataframe from the results_june list. The "descr
 
 ### - December Data
 <p padding-left: 50px>We followed a similar pattern in December, writing the following query, only changing the month value to 12 instead of 6 to represent December: </p><br>
-```python
-results_dec = session.query(Measurement.tobs).\
-filter(extract('month', Measurement.date)==12).all()
-```
+results_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()
 <p>The "describe" function gave us this table:</p>
 <p align ="center">
 <img src="Results/Dec_temps.png" alt="December Temps" width="150"/><br>
@@ -40,13 +38,9 @@ filter(extract('month', Measurement.date)==12).all()
 ## Summary
 <p>This study has shown that the island of Oahu will be a great place to open an ice cream shop. Temperatures are warm and comfortable, and rarely dip to levels of discomfort. Even the December low of 56 degrees is a fairly comfortable temperature relative to many parts of the world. </p>
 <p>To determine the suitability of the location for a surf shop, we will need to delve further into the climate data to ascertain the precipitation amounts for the months of June and December. Two additional queries would garner this information. First, we would query the database for the precipitation measurements, filtering for the month of June:
-```python
-precip_june = session.query(Measurement.prcp).\
-filter(extract('month', Measurement.date)==6).all()
-```
+precip_june = session.query(Measurement.prcp).filter(extract('month', Measurement.date)==6).all()
+
 Next we would perform the same query for December:
-```python
-precip_dec = session.query(Measurement.tobs).\
-filter(extract('month', Measurement.date)==12).all()
-```
+precip_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()
+
 Once we have applied the "describe" function to this data we will be able to see the rainfall amounts on Oahu and decide if there are enough sunny days to justify opening a surf shop.</p>
