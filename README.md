@@ -12,9 +12,9 @@ We were asked to help decide if a Hawaiian surf shop that sells ice cream would 
 In order to determine the suitability of Oahu as a surf shop location we focused on data from the months of June and December. <br>
 ### - June Data
 <p padding-left: 50px>We began our code by importing SQLAlchemy, then created a SQLite engine and reflected our tables into the new model. We created a session to link our Python code to the database then queried it. To filter the data for the month of June we used the SQLAlchemy "extract" function to find the month each measurement was taken. The code for the resultant query was:</p>
-~~~
+```
 results_june = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==6).all()
-~~~
+```
 
 We then used Pandas to create a dataframe from the results_june list. The "describe" function returned the following statistics: <br>
 <p align ="center">
