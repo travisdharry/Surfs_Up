@@ -40,9 +40,11 @@ We then used Pandas to create a dataframe from the results_june list. The "descr
 ## Summary
 <p>This study has shown that the island of Oahu will be a great place to open an ice cream shop. Temperatures are warm and comfortable, and rarely dip to levels of discomfort. Even the December low of 56 degrees is a fairly comfortable temperature relative to many parts of the world. </p>
 <p>To determine the suitability of the location for a surf shop, we will need to delve further into the climate data to ascertain the precipitation amounts for the months of June and December. Two additional queries would garner this information. First, we would query the database for the precipitation measurements, filtering for the month of June:</p>
+
 ```precip_june = session.query(Measurement.prcp).filter(extract('month', Measurement.date)==6).all()```
 
 <p>Next we would perform the same query for December:</p>
+
 ```precip_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()```
 
 <p>Once we have applied the "describe" function to this data we will be able to see the rainfall amounts on Oahu and decide if there are enough sunny days to justify opening a surf shop.</p>
