@@ -24,12 +24,12 @@ We then used Pandas to create a dataframe from the results_june list. The "descr
 <p padding-left: 50px>With a mean temperature of 75 degrees and a minimum temperature of 64 degrees, June would be an ideal month in which to sell ice cream.</p>
 
 ### - December Data
-<p padding-left: 50px>We followed a similar pattern in December, writing the following query, only changing the month value to 12 instead of 6 to represent December: <br>
+<p padding-left: 50px>We followed a similar pattern in December, writing the following query, only changing the month value to 12 instead of 6 to represent December: </p><br>
 ```python
 results_dec = session.query(Measurement.tobs).\
 filter(extract('month', Measurement.date)==12).all()
 ```
-The "describe" function gave us this table:</p>
+<p>The "describe" function gave us this table:</p>
 <p align ="center">
 <img src="Results/Dec_temps.png" alt="December Temps" width="150"/><br>
 </p>
