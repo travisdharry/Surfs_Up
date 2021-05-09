@@ -44,6 +44,6 @@ We then used Pandas to create a dataframe from the results_june list. The "descr
 
 <p>Next we would perform the same query for December:</p>
 
-```precip_dec = session.query(Measurement.tobs).filter(extract('month', Measurement.date)==12).all()```
+```precip_dec = session.query(Measurement.prcp).filter(extract('month', Measurement.date)==12).all()```
 
 <p>Once we have applied the "describe" function to this data we will be able to see the rainfall amounts on Oahu and decide if there are enough sunny days to justify opening a surf shop.</p>
