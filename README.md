@@ -6,7 +6,7 @@ We were asked to help decide if a Hawaiian surf shop that sells ice cream would 
 
 ## Resources
 - Data Sources: hawaii.sqlite
-- Software: Python, Pandas, SQLAlchemy, Jupyter Notebook
+- Software: Python, 'Pandas', `SQLAlchemy`, Jupyter Notebook
 
 ## Results
 In order to determine the suitability of Oahu as a surf shop location we focused on data from the months of June and December. <br>
